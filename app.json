@@ -3,27 +3,24 @@
     "name": "voice-ai-demo",
     "slug": "voice-ai-demo",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.amshotzz.voiceai",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app needs access to the microphone to convert your voice to text."
+      }
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true
+      "package": "com.amshotzz.voiceai",
+      "permissions": ["RECORD_AUDIO"]
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow Voice AI to access your microphone."
+        }
+      ]
+    ]
   }
 }
